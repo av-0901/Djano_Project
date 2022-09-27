@@ -1,0 +1,18 @@
+<h1>Add member</h1>
+
+<form action="updaterecord/{{ mymember.id }}" method="post">
+{% csrf_token %}
+Name:<br>
+<input name="name" value="{{ mymember.name }}">
+<br><br>
+Department:<br>
+<input name="dept" value="{{ mymember.dept }}">
+<br><br>
+Designation:<br>
+<input name="desig" value="{{ mymember.desig }}">
+<br><br>
+Salary:<br>
+<input name="salary" value="{{ mymember.salary }}">
+<br><br>
+<input type="submit" value="Submit">
+</form>

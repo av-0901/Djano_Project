@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <style>
+        table,tr,th{
+            border: 1 px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRUD Application</h1>
+
+    <table border="black">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Dept</th>
+            <th>Designation</th>
+            <th>Salary</th>
+            <th>Delete</th>
+        </tr>
+        {% for x in emp %}
+        <tr>
+            <td><a href="update/{{ x.id }}">{{ x.id }}</a></td>
+            <td>{{x.name}}</td>
+            <td>{{x.dept}}</td>
+            <td>{{x.desig}}</td>
+            <td>{{x.salary}}</td>
+            <td><a href="delete/{{ x.id }}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p>
+        <a href="add/">Add member</a>
+    </p>
+</body>
+</html>
